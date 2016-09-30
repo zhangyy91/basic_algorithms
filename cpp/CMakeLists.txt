@@ -2,8 +2,9 @@ cmake_minimum_required(VERSION 3.6)
 project(cpp)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
-
-set(SOURCE_FILES
-    binary_tree.cpp)
-
-add_executable(cpp ${SOURCE_FILES})
+find_package(Threads)
+link_libraries(${CMAKE_THREAD_LIBS_INIT})
+add_executable(binary_tree binary_tree.cpp)
+add_executable(stack stack.cpp)
+add_executable(queue queue.cpp)
+add_executable(sort sort.cpp)
